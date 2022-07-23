@@ -1,14 +1,32 @@
 package com.example.recyclerviewwebservices;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.Ignore;
+import androidx.room.PrimaryKey;
+
+
 import java.util.ArrayList;
 
+@Entity
 public class Article {
 
+    @PrimaryKey(autoGenerate = true)
+    private int id;
+    @ColumnInfo(name= "title")
     private String title;
+    @ColumnInfo(name= "author")
     private String author;
 
-    public Article(String title, String author) {
+    public Article(int id, String title, String author) {
         this.title = title;
+        this.author= author;
+        this.id= id;
+    }
+
+    @Ignore
+    public Article(String title, String author){
+        this.title= title;
         this.author= author;
     }
 
@@ -28,6 +46,11 @@ public class Article {
         this.author = author;
     }
 
+    public int getId(){
+        return id;
+    }
+
+
     @Override
     public String toString() {
         return "Article{" +
@@ -36,14 +59,6 @@ public class Article {
                 '}';
     }
 
-    //    public static ArrayList<Article> createArticleList(int numArticles, String title, String author){
-//        ArrayList<Article> articles = new ArrayList<>();
-//
-//        for(int i=1; i<=numArticles; i++){
-//            articles.add(new Article(title, author));
-//        }
-//
-//        return articles;
-//    }
+
 
 }

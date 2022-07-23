@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHolder> {
 
-    private List<Article> mArticles;
+    private final List<Article> mArticles;
 
     public ArticleAdapter(List<Article> articles){
         mArticles= articles;

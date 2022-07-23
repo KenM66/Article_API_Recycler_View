@@ -53,4 +53,16 @@
         app:layout_constraintBottom_toTopOf="@+id/rvArticles"
         app:layout_constraintEnd_toEndOf="@+id/rvArticles" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="display"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="1dp"
+        android:text="Display"
+        app:layout_constraintStart_toStartOf="@+id/rvArticles"
+        app:layout_constraintTop_toBottomOf="@+id/rvArticles"
+    />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
